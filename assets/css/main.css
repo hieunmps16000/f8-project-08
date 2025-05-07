@@ -1170,6 +1170,12 @@ table {
   box-sizing: border-box;
 }
 
+:root {
+  --text-color: #1a162e;
+  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(6%) saturate(6554%) hue-rotate(213deg) brightness(94%)
+      contrast(95%);
+}
+
 html {
   font-size: 62.5%;
 }
@@ -1177,6 +1183,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: Gordita, sans-serif;
+  color: var(--text-color);
 }
 
 a {
@@ -1190,6 +1197,18 @@ button {
   background: transparent;
 }
 
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  color: inherit;
+}
+
+.icon {
+  filter: var(--icon-color);
+}
+
 .header {
   background: #eee;
 }
@@ -1200,18 +1219,19 @@ button {
   padding: 30px 0;
 }
 
+.top-act__btn, .top-act__group, .top-act, .navbar__link, .navbar__list {
+  display: flex;
+  align-items: center;
+}
+
 .navbar {
   margin-left: 144px;
   margin-right: auto;
 }
 .navbar__list {
-  display: flex;
-  align-items: center;
   column-gap: 30px;
 }
 .navbar__link {
-  display: flex;
-  align-items: center;
   column-gap: 6px;
   font-size: 1.5rem;
   font-weight: 500;
@@ -1219,13 +1239,9 @@ button {
 }
 
 .top-act {
-  display: flex;
-  align-items: center;
   column-gap: 20px;
 }
 .top-act__group {
-  display: flex;
-  align-items: center;
   min-width: 50px;
   height: 50px;
   border-radius: 8px;
@@ -1241,10 +1257,9 @@ button {
   padding: 13px;
 }
 .top-act__btn {
-  display: flex;
-  align-items: center;
   column-gap: 10px;
   padding: 10px 20px;
+  cursor: pointer;
 }
 .top-act__title {
   font-size: 1.5rem;
@@ -1258,6 +1273,7 @@ button {
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }
 
 .logo {

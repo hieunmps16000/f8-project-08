@@ -8,19 +8,22 @@
     padding: 30px 0;
 }
 
+%flexItemsCenter {
+    display: flex;
+    align-items: center;
+}
+
 .navbar {
     margin-left: 144px;
     margin-right: auto;
 
     &__list {
-        display: flex;
-        align-items: center;
+        @extend %flexItemsCenter;
         column-gap: 30px;
     }
 
     &__link {
-        display: flex;
-        align-items: center;
+        @extend %flexItemsCenter;
         column-gap: 6px;
 
         font-size: 1.5rem;
@@ -30,13 +33,11 @@
 }
 
 .top-act {
-    display: flex;
-    align-items: center;
+    @extend %flexItemsCenter;
     column-gap: 20px;
 
     &__group {
-        display: flex;
-        align-items: center;
+        @extend %flexItemsCenter;
 
         min-width: 50px;
         height: 50px;
@@ -56,10 +57,10 @@
     }
 
     &__btn {
-        display: flex;
-        align-items: center;
+        @extend %flexItemsCenter;
         column-gap: 10px;
         padding: 10px 20px;
+        cursor: pointer;
     }
 
     &__title {
@@ -75,5 +76,6 @@
         object-fit: cover;
         border-radius: 8px;
         box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
     }
 }
