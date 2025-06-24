@@ -1,7 +1,6 @@
 @use "sass:map";
 
 $breakpoints: (
-    xs: 0,
     sm: 576px,
     md: 768px,
     lg: 992px,
@@ -11,7 +10,11 @@ $breakpoints: (
 
 @mixin breakpoint($key) {
     $breakpoint: map.get($breakpoints, $key);
-    @media (max-width: ($breakpoint - 0.02)) {
-        @content;
+    @if ($breakpoint) {
+        @media (max-width: ($breakpoint - 0.02)) {
+            @content;
+        }
+    } @else {
+        @error 'The value #{$key} is not in breakpoints list.';
     }
 }
